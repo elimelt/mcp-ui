@@ -22,6 +22,8 @@ RSpec.describe McpUiServer do
         expect(resource[:resource][:text]).to eq('<h1>Hello</h1>')
       end
 
+      
+
       it 'creates a resource with blob encoding' do
         resource = described_class.create_ui_resource(uri: uri, content: content, encoding: :blob)
         expect(resource[:resource][:blob]).to eq(Base64.strict_encode64('<h1>Hello</h1>'))
